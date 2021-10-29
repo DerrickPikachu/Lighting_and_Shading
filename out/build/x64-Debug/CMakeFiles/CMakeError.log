@@ -1,0 +1,41 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_MARCH_NATIVE failed with the following output:
+Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_e9a33 && [1/2] Building CXX object CMakeFiles\cmTC_e9a33.dir\src.cxx.obj
+cl : 命令列 warning D9002 : 忽略未知的選項 '-march=native'
+[2/2] Linking CXX executable cmTC_e9a33.exe
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_xHOST failed with the following output:
+Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_92cfb && [1/2] Building CXX object CMakeFiles\cmTC_92cfb.dir\src.cxx.obj
+cl : 命令列 warning D9002 : 忽略未知的選項 '-xHost'
+[2/2] Linking CXX executable cmTC_92cfb.exe
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_QxHOST failed with the following output:
+Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_cc157 && [1/2] Building CXX object CMakeFiles\cmTC_cc157.dir\src.cxx.obj
+cl : 命令列 warning D9002 : 忽略未知的選項 '/QxHost'
+[2/2] Linking CXX executable cmTC_cc157.exe
+
+
+Source file was:
+int main() { return 0; }
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_0d371 && [1/2] Building C object CMakeFiles\cmTC_0d371.dir\CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_0d371.dir/CheckIncludeFile.c.obj 
+C:\PROGRA~2\MICROS~2\2019\PROFES~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\cmTC_0d371.dir\CheckIncludeFile.c.obj /FdCMakeFiles\cmTC_0d371.dir\ /FS -c CheckIncludeFile.c
+CheckIncludeFile.c(1): fatal error C1083: 無法開啟包含檔案: 'pthread.h': No such file or directory
+ninja: build stopped: subcommand failed.
+
+
+
