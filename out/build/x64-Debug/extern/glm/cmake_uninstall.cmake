@@ -1,14 +1,14 @@
-if(NOT EXISTS "C:/project/CG/project2/HW2/out/build/x64-Debug/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: C:/project/CG/project2/HW2/out/build/x64-Debug/install_manifest.txt")
+if(NOT EXISTS "C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/install_manifest.txt")
 endif()
 
-file(READ "C:/project/CG/project2/HW2/out/build/x64-Debug/install_manifest.txt" files)
+file(READ "C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")
   if(IS_SYMLINK "$ENV{DESTDIR}${file}" OR EXISTS "$ENV{DESTDIR}${file}")
     exec_program(
-      "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+      "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
       OUTPUT_VARIABLE rm_out
       RETURN_VALUE rm_retval
       )

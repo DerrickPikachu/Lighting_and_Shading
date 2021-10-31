@@ -1,4 +1,4 @@
-# Install script for directory: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-C/src
+# Install script for directory: C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-C/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-C/bin/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-C/bin/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

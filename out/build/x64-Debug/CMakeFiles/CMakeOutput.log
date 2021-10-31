@@ -1,6 +1,6 @@
-The system is: Windows - 10.0.19042 - AMD64
+The system is: Windows - 10.0.19041 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe 
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe 
 Build flags: 
 Id flags:  
 
@@ -21,10 +21,10 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
 
-The C compiler identification is MSVC, found in "C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/3.20.21032501-MSVC_2/CompilerIdC/CMakeCCompilerId.exe"
+The C compiler identification is MSVC, found in "C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/3.20.21032501-MSVC_2/CompilerIdC/CMakeCCompilerId.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe 
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe 
 Build flags: 
 Id flags:  
 
@@ -45,47 +45,47 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
 
-The CXX compiler identification is MSVC, found in "C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/3.20.21032501-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe"
+The CXX compiler identification is MSVC, found in "C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/3.20.21032501-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+Change Dir: C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_002fd && [1/2] Building C object CMakeFiles\cmTC_002fd.dir\CMakeCCompilerABI.c.obj
-[2/2] Linking C executable cmTC_002fd.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_6baf0 && [1/2] Building C object CMakeFiles\cmTC_6baf0.dir\CMakeCCompilerABI.c.obj
+[2/2] Linking C executable cmTC_6baf0.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+Change Dir: C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_170bf && [1/2] Building CXX object CMakeFiles\cmTC_170bf.dir\CMakeCXXCompilerABI.cpp.obj
-[2/2] Linking CXX executable cmTC_170bf.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_4e4e2 && [1/2] Building CXX object CMakeFiles\cmTC_4e4e2.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_4e4e2.exe
 
 
 
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_AVX512 succeeded with the following output:
-Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+Change Dir: C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_a8686 && [1/2] Building CXX object CMakeFiles\cmTC_a8686.dir\src.cxx.obj
-[2/2] Linking CXX executable cmTC_a8686.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_097ad && [1/2] Building CXX object CMakeFiles\cmTC_097ad.dir\src.cxx.obj
+[2/2] Linking CXX executable cmTC_097ad.exe
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_AVX2 succeeded with the following output:
-Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+Change Dir: C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_08248 && [1/2] Building CXX object CMakeFiles\cmTC_08248.dir\src.cxx.obj
-[2/2] Linking CXX executable cmTC_08248.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_bd59d && [1/2] Building CXX object CMakeFiles\cmTC_bd59d.dir\src.cxx.obj
+[2/2] Linking CXX executable cmTC_bd59d.exe
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_AVX succeeded with the following output:
-Change Dir: C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/CMakeTmp
+Change Dir: C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_b83e7 && [1/2] Building CXX object CMakeFiles\cmTC_b83e7.dir\src.cxx.obj
-[2/2] Linking CXX executable cmTC_b83e7.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_23998 && [1/2] Building CXX object CMakeFiles\cmTC_23998.dir\src.cxx.obj
+[2/2] Linking CXX executable cmTC_23998.exe
 
 
 Source file was:

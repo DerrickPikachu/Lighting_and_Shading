@@ -1,7 +1,7 @@
-prefix=C:/project/CG/project2/HW2/out/install/x64-Debug
+prefix=C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/install/x64-Debug
 exec_prefix=${prefix}
-includedir=C:/project/CG/project2/HW2/out/install/x64-Debug/include
-libdir=C:/project/CG/project2/HW2/out/install/x64-Debug/lib
+includedir=C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/install/x64-Debug/include
+libdir=C:/my_application/homework/CG_HW2/Lighting_and_Shading/out/install/x64-Debug/lib
 
 Name: GLFW
 Description: A multi-platform library for OpenGL, window and input
