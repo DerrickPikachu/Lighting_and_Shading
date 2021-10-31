@@ -181,10 +181,7 @@ int main() {
   // Hint: check the calss of the variable(wood, colorOrange, dice) we've created for you.
   //       fromFile member function
   // We currently set everything to a color
-  // wood.fromColor(glm::vec4(0.5, 0, 0.5, 1));
   wood.fromFile("../assets/texture/wood.jpg");
-  // dice.fromColor(glm::vec4(1, 0, 0, 1), glm::vec4(1, 0.5, 0, 1), glm::vec4(0, 1, 0, 1), glm::vec4(0, 0, 1, 1),
-  //                glm::vec4(1, 1, 1, 1), glm::vec4(1, 1, 0, 1));
   dice.fromFile("../assets/texture/posx.jpg", "../assets/texture/negx.jpg", "../assets/texture/posy.jpg",
                 "../assets/texture/negy.jpg", "../assets/texture/posz.jpg", "../assets/texture/negz.jpg");
   

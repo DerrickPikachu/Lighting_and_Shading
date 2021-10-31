@@ -4,12 +4,8 @@
 #include <stb_image.h>
 #include <glm/gtc/type_ptr.hpp>
 namespace graphics::texture {
-void TextureCubeMap::fromFile(const utils::fs::path& posx,
-                              const utils::fs::path& negx,
-                              const utils::fs::path& posy,
-                              const utils::fs::path& negy,
-                              const utils::fs::path& posz,
-                              const utils::fs::path& negz) const {
+void TextureCubeMap::fromFile(const utils::fs::path& posx, const utils::fs::path& negx, const utils::fs::path& posy,
+                              const utils::fs::path& negy, const utils::fs::path& posz, const utils::fs::path& negz) const {
   std::array<const utils::fs::path, 6> filenames{posx, negx, posy, negy, posz, negz};
   int width, height, nChannels;
   stbi_set_flip_vertically_on_load(1);
