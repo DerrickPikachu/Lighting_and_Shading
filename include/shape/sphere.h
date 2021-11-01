@@ -14,9 +14,11 @@ class Sphere final : public Shape {
  public:
   Sphere();
   Sphere(const std::vector<GLfloat>& vertices, const std::vector<GLuint>& indices);
+
   void draw() const override;
   CONSTEXPR_VIRTUAL const char* getTypeName() const override { return "Sphere"; }
   CONSTEXPR_VIRTUAL ShapeType getType() const override { return ShapeType::Sphere; }
+  
   template <typename... Args>
   static std::unique_ptr<Sphere> make_unique(Args&&... args) {
     return std::make_unique<Sphere>(std::forward<Args>(args)...);

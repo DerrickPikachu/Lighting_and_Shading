@@ -49,3 +49,8 @@
 5	3010	6573801198862401	src/CMakeFiles/HW2.dir/texture/cubemap.cpp.obj	18a5a505c541fb1b
 11	3316	6573801201983254	src/CMakeFiles/HW2.dir/main.cpp.obj	1b38f5221084b274
 3316	4585	6573801213880613	../../../bin/HW2.exe	ac4518f098a4f92c
+6	1646	6573906892851800	src/CMakeFiles/HW2.dir/camera/quat_camera.cpp.obj	95f03105c5efe4d
+12	4174	6573906918161685	src/CMakeFiles/HW2.dir/main.cpp.obj	1b38f5221084b274
+4174	5373	6573906929463911	../../../bin/HW2.exe	ac4518f098a4f92c
+6	3507	6574053148014737	src/CMakeFiles/HW2.dir/main.cpp.obj	1b38f5221084b274
+3509	4642	6574053158849346	../../../bin/HW2.exe	ac4518f098a4f92c

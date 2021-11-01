@@ -71,12 +71,10 @@ void Plane::draw() const {
   glBindVertexArray(0);
 }
 
-void Plane::generateVertices(std::vector<GLfloat>& vertices,
-                             std::vector<GLuint>& indices,
-                             int subdivision,
-                             float width,
-                             float height,
-                             bool scaleTexture) {
+void Plane::generateVertices(
+  std::vector<GLfloat>& vertices, std::vector<GLuint>& indices, int subdivision,
+  float width, float height, bool scaleTexture
+  ) {
   vertices.reserve((subdivision + 1) * (subdivision + 1) * 8);
   indices.reserve((subdivision) * (2 * subdivision + 3));
 

@@ -64,7 +64,7 @@ void QuaternionCamera::updateProjection(float aspectRatio) {
   constexpr float zFar = 100.0f;
   // TODO: paste your HW1 here
   projectionMatrix = glm::mat4(1);
-  projectionMatrix = glm::perspective(FOV, 5.0f / 3.0f, zNear, zFar);
+  projectionMatrix = glm::perspective(FOV, aspectRatio, zNear, zFar);
   // END TODO block
   viewProjectionMatrix = projectionMatrix * viewMatrix;
 }
