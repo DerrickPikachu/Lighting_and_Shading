@@ -26,7 +26,7 @@ graphics::camera::Camera* currentCamera = nullptr;
 bool isWindowSizeChanged = false;
 bool isLightChanged = true;
 int currentLight = 0;
-int currentShader = 1;
+int currentShader = 2;
 int alignSize = 256;
 // TODO (optional): Configs
 // You should change line 32-35 if you add more shader / light / camera / mesh.
@@ -174,7 +174,7 @@ int main() {
   for (int i = 0; i < LIGHT_COUNT; ++i) {
     int offset = i * perLightOffset;
     lightUBO.load(offset, sizeof(glm::mat4), lights[i]->getLightSpaceMatrixPTR());
-    lightUBO.load(offset + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
+    lightUBO.load(offset + sizeof(glm::mat4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
     lightUBO.load(offset + sizeof(glm::mat4) + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightCoefficientsPTR());
   }
 
@@ -260,7 +260,9 @@ int main() {
       //       the next light info
       //       2. you should not bind the same light every time, because we are in a while-loop
       // Note: You can do this by a single line of lightUBO.bindUniformBlockIndex call
-      lightUBO.bindUniformBlockIndex(2, perLightOffset * currentLight, perLightSize);
+      // std::cout << perLightOffset * currentLight << std::endl;
+      // lightUBO.bindUniformBlockIndex(2, perLightOffset * currentLight, perLightSize);
+      lightUBO.bindUniformBlockIndex(2, 0, perLightSize);
       if (lights[currentLight]->getType() == graphics::light::LightType::Spot) {
         lights[currentLight]->update(currentCamera->getViewMatrix());
         glm::vec4 front = currentCamera->getFront();
@@ -269,7 +271,7 @@ int main() {
       }
       isLightChanged = false;
     }
-    
+
     // TODO (If you want to implement shadow): Render shadow to texture first
     // Hint: You need to change glViewport, glCullFace and bind shadow's framebuffer to render
 

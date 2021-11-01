@@ -9,6 +9,7 @@ layout(location = 2) in vec2 TextureCoordinate_in;
 // You may want to add some out here
 out vec3 rawPosition;
 out vec2 TextureCoordinate;
+out vec3 lightColor;
 
 // Uniform blocks
 // https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)
@@ -68,4 +69,16 @@ void main() {
   //       9. we've set ambient & color for you
   // Example without lighting :)
   gl_Position = viewProjectionMatrix * modelMatrix * vec4(Position_in, 1.0);
+  vec3 N = normalize(vec3(normalMatrix * vec4(Normal_in, 1.0)));
+  vec3 L = normalize(vec3(lightVector));
+  vec3 V = normalize(rawPosition - vec3(viewPosition.x, viewPosition.y, viewPosition.z));
+  vec3 R = normalize(reflect(L, N));
+  vec3 light = vec3(1.0, 1.0, 1.0);
+
+  vec3 ambientLight = light * ambient;
+  vec3 diffuseLight = light * kd * max(dot(N, L), 0.0);
+  vec3 specularLight = light * ks * pow(max(dot(R, V), 0), 10);
+
+  vec3 result = ambientLight + diffuseLight + specularLight;
+  lightColor = result;
 }
