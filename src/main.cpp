@@ -260,7 +260,6 @@ int main() {
       //       the next light info
       //       2. you should not bind the same light every time, because we are in a while-loop
       // Note: You can do this by a single line of lightUBO.bindUniformBlockIndex call
-      // std::cout << perLightOffset * currentLight << std::endl;
       lightUBO.bindUniformBlockIndex(2, perLightOffset * currentLight, perLightSize);
       if (lights[currentLight]->getType() == graphics::light::LightType::Spot) {
         lights[currentLight]->update(currentCamera->getViewMatrix());

@@ -84,6 +84,13 @@ void main() {
   vec3 diffuseLight = light * kd * max(dot(N, L), 0.0);
   vec3 specularLight = light * ks * pow(max(dot(R, V), 0), 10);
 
-  vec3 result = ambientLight + diffuseLight + specularLight;
+  float constant = 1.0;
+  float linear = 0.022;
+  float quadratic = 0.0019;
+  float dist = length(vec3(lightVector) - rawPosition);
+  float attenuation = 1.0 / (constant + dist * linear + dist * dist * quadratic);
+
+  vec3 result = (ambientLight + diffuseLight + specularLight) * attenuation;
+  // vec3 result = (ambientLight + diffuseLight + specularLight);
   lightColor = result;
 }
