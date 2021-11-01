@@ -70,9 +70,14 @@ void main() {
   // Example without lighting :)
   gl_Position = viewProjectionMatrix * modelMatrix * vec4(Position_in, 1.0);
   vec3 N = normalize(vec3(normalMatrix * vec4(Normal_in, 1.0)));
-  vec3 L = normalize(vec3(lightVector));
-  vec3 V = normalize(rawPosition - vec3(viewPosition.x, viewPosition.y, viewPosition.z));
-  vec3 R = normalize(reflect(L, N));
+  vec3 L = vec3(0);
+  if (coefficients.w == 1) {  // Direct light
+    L = normalize(vec3(lightVector));
+  } else {  // Point light
+    L = normalize(vec3(lightVector) - rawPosition);
+  }
+  vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - rawPosition);
+  vec3 R = normalize(reflect(-L, N));
   vec3 light = vec3(1.0, 1.0, 1.0);
 
   vec3 ambientLight = light * ambient;

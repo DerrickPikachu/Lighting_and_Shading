@@ -25,7 +25,7 @@ graphics::camera::Camera* currentCamera = nullptr;
 // Control variables
 bool isWindowSizeChanged = false;
 bool isLightChanged = true;
-int currentLight = 0;
+int currentLight = 1;
 int currentShader = 2;
 int alignSize = 256;
 // TODO (optional): Configs
@@ -261,8 +261,7 @@ int main() {
       //       2. you should not bind the same light every time, because we are in a while-loop
       // Note: You can do this by a single line of lightUBO.bindUniformBlockIndex call
       // std::cout << perLightOffset * currentLight << std::endl;
-      // lightUBO.bindUniformBlockIndex(2, perLightOffset * currentLight, perLightSize);
-      lightUBO.bindUniformBlockIndex(2, 0, perLightSize);
+      lightUBO.bindUniformBlockIndex(2, perLightOffset * currentLight, perLightSize);
       if (lights[currentLight]->getType() == graphics::light::LightType::Spot) {
         lights[currentLight]->update(currentCamera->getViewMatrix());
         glm::vec4 front = currentCamera->getFront();
