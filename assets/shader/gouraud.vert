@@ -117,13 +117,13 @@ void main() {
     vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - rawPosition);
     vec3 R = normalize(reflect(-L, N));
 
-    vec3 diffuseLight = light * kd * max(dot(N, L), 0.0) * intensity;
-    vec3 specularLight = light * ks * pow(max(dot(R, V), 0), 8) * intensity;
+    vec3 diffuseLight = light * kd * max(dot(N, L), 0.0) * intensity * attenuation;
+    vec3 specularLight = light * ks * pow(max(dot(R, V), 0), 8) * intensity * attenuation;
 
     result = (ambientLight + diffuseLight + specularLight);
   } else {  // The case that the vertex is outside the spotlight litting range
     result = ambientLight;
   }
 
-  lightColor = result * attenuation;
+  lightColor = result;
 }

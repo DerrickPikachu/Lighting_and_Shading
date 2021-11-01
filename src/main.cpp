@@ -25,7 +25,7 @@ graphics::camera::Camera* currentCamera = nullptr;
 // Control variables
 bool isWindowSizeChanged = false;
 bool isLightChanged = true;
-int currentLight = 2;
+int currentLight = 1;
 int currentShader = 2;
 int alignSize = 256;
 // TODO (optional): Configs
