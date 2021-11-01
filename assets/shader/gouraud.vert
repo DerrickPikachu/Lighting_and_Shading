@@ -10,6 +10,11 @@ layout(location = 2) in vec2 TextureCoordinate_in;
 out vec3 rawPosition;
 out vec2 TextureCoordinate;
 out vec3 lightColor;
+/*out vec3 ambientLight;
+out vec3 cameraPos;
+out vec3 lightDirection;
+out float isSpotlight;
+out float cutoff;*/
 
 // Uniform blocks
 // https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)
@@ -69,28 +74,56 @@ void main() {
   //       9. we've set ambient & color for you
   // Example without lighting :)
   gl_Position = viewProjectionMatrix * modelMatrix * vec4(Position_in, 1.0);
-  vec3 N = normalize(vec3(normalMatrix * vec4(Normal_in, 1.0)));
+
+  /*cameraPos = vec3(viewPosition);
+  lightDirection = vec3(lightVector);
+  isSpotlight = coefficients.z;
+  cutoff = coefficients.y;*/
+
+  vec3 result = vec3(0);
+  float cutoff = coefficients.y;
+
   vec3 L = vec3(0);
+  float theta = 0.0;
+  float intensity = 1.0;
+  float constant = 1.0; 
+  float linear;
+  float quadratic;
+  float attenuation;
+  float dist = length(vec3(lightVector) - rawPosition);
   if (coefficients.w == 1) {  // Direct light
     L = normalize(vec3(lightVector));
+    attenuation = 0.65;
+  } else if (coefficients.z == 1) {  // Spot light
+    L = normalize(vec3(viewPosition) - rawPosition);
+    theta = dot(-L, normalize(vec3(lightVector)));
+    float epsilon = coefficients.x - coefficients.y;
+    intensity = clamp((theta - coefficients.y) / epsilon, 0.0, 1.0);
+
+    linear = 0.027;
+    quadratic = 0.0028;
+    attenuation = 1.0 / (constant + dist * linear + dist * dist * quadratic);
   } else {  // Point light
     L = normalize(vec3(lightVector) - rawPosition);
+    linear = 0.014;
+    quadratic = 0.007;
+    attenuation = 1.0 / (constant + dist * linear + dist * dist * quadratic);
   }
-  vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - rawPosition);
-  vec3 R = normalize(reflect(-L, N));
+
   vec3 light = vec3(1.0, 1.0, 1.0);
-
   vec3 ambientLight = light * ambient;
-  vec3 diffuseLight = light * kd * max(dot(N, L), 0.0);
-  vec3 specularLight = light * ks * pow(max(dot(R, V), 0), 10);
+  if ((theta > cutoff && coefficients.z == 1) || coefficients.z != 1) {
+    vec3 N = normalize(vec3(normalMatrix * vec4(Normal_in, 1.0)));
+    vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - rawPosition);
+    vec3 R = normalize(reflect(-L, N));
 
-  float constant = 1.0;
-  float linear = 0.022;
-  float quadratic = 0.0019;
-  float dist = length(vec3(lightVector) - rawPosition);
-  float attenuation = 1.0 / (constant + dist * linear + dist * dist * quadratic);
+    vec3 diffuseLight = light * kd * max(dot(N, L), 0.0) * intensity;
+    vec3 specularLight = light * ks * pow(max(dot(R, V), 0), 8) * intensity;
 
-  vec3 result = (ambientLight + diffuseLight + specularLight) * attenuation;
-  // vec3 result = (ambientLight + diffuseLight + specularLight);
-  lightColor = result;
+    result = (ambientLight + diffuseLight + specularLight);
+  } else {  // The case that the vertex is outside the spotlight litting range
+    result = ambientLight;
+  }
+
+  lightColor = result * attenuation;
 }
