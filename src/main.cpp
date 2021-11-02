@@ -25,8 +25,8 @@ graphics::camera::Camera* currentCamera = nullptr;
 // Control variables
 bool isWindowSizeChanged = false;
 bool isLightChanged = true;
-int currentLight = 1;
-int currentShader = 2;
+int currentLight = 0;
+int currentShader = 1;
 int alignSize = 256;
 // TODO (optional): Configs
 // You should change line 32-35 if you add more shader / light / camera / mesh.
@@ -174,7 +174,7 @@ int main() {
   for (int i = 0; i < LIGHT_COUNT; ++i) {
     int offset = i * perLightOffset;
     lightUBO.load(offset, sizeof(glm::mat4), lights[i]->getLightSpaceMatrixPTR());
-    lightUBO.load(offset + sizeof(glm::mat4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
+    lightUBO.load(offset + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
     lightUBO.load(offset + sizeof(glm::mat4) + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightCoefficientsPTR());
   }
 
@@ -269,7 +269,7 @@ int main() {
       }
       isLightChanged = false;
     }
-
+    
     // TODO (If you want to implement shadow): Render shadow to texture first
     // Hint: You need to change glViewport, glCullFace and bind shadow's framebuffer to render
 
