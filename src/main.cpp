@@ -64,6 +64,7 @@ void resizeCallback(GLFWwindow* window, int width, int height) {
 }
 
 int main() {
+  std::cout << "test" << std::endl;
   // Initialize OpenGL context, details are wrapped in class.
   OpenGLContext::createContext(43, GLFW_OPENGL_CORE_PROFILE);
   GLFWwindow* window = OpenGLContext::getWindow();
