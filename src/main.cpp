@@ -175,7 +175,7 @@ int main() {
   for (int i = 0; i < LIGHT_COUNT; ++i) {
     int offset = i * perLightOffset;
     lightUBO.load(offset, sizeof(glm::mat4), lights[i]->getLightSpaceMatrixPTR());
-    lightUBO.load(offset + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
+    lightUBO.load(offset + sizeof(glm::mat4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
     lightUBO.load(offset + sizeof(glm::mat4) + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightCoefficientsPTR());
   }
 
