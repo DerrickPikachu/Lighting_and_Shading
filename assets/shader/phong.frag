@@ -88,13 +88,16 @@ void main() {
   vec3 light = vec3(1.0, 1.0, 1.0);
   vec3 ambientLight = light * ambient;
   if ((theta > cutoff && coefficients.z == 1) || coefficients.z != 1) {
+    vec3 N = normalize(normal);
     vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - rawPosition);
-    vec3 R = normalize(reflect(-L, normal));
+    vec3 R = normalize(reflect(-L, N));
+    vec3 H = normalize(V + L);
 
-    vec3 diffuseLight = light * kd * max(dot(L, normal), 0.0) * intensity * attenuation;
+    vec3 diffuseLight = light * kd * max(dot(L, N), 0.0) * intensity * attenuation;
     vec3 specularLight = light * ks * pow(max(dot(R, V), 0.0), 8) * intensity * attenuation;
+    // vec3 specularLight = light * ks * max(dot(R, V), 0.0) * intensity * attenuation;
 
-    result = diffuseLight;
+    result = ambientLight + diffuseLight + specularLight;
   } else {
     result = ambientLight;
   }
