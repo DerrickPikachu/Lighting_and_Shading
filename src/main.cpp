@@ -64,6 +64,7 @@ void resizeCallback(GLFWwindow* window, int width, int height) {
 }
 
 int main() {
+  std::cout << "test" << std::endl;
   // Initialize OpenGL context, details are wrapped in class.
   OpenGLContext::createContext(43, GLFW_OPENGL_CORE_PROFILE);
   GLFWwindow* window = OpenGLContext::getWindow();
@@ -174,7 +175,7 @@ int main() {
   for (int i = 0; i < LIGHT_COUNT; ++i) {
     int offset = i * perLightOffset;
     lightUBO.load(offset, sizeof(glm::mat4), lights[i]->getLightSpaceMatrixPTR());
-    lightUBO.load(offset + sizeof(glm::mat4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
+    lightUBO.load(offset + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
     lightUBO.load(offset + sizeof(glm::mat4) + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightCoefficientsPTR());
   }
 
@@ -269,7 +270,7 @@ int main() {
       }
       isLightChanged = false;
     }
-
+    
     // TODO (If you want to implement shadow): Render shadow to texture first
     // Hint: You need to change glViewport, glCullFace and bind shadow's framebuffer to render
 

@@ -94,7 +94,7 @@ void main() {
     vec3 diffuseLight = light * kd * max(dot(L, normal), 0.0) * intensity * attenuation;
     vec3 specularLight = light * ks * pow(max(dot(R, V), 0.0), 8) * intensity * attenuation;
 
-    result = ambientLight + diffuseLight + specularLight;
+    result = diffuseLight;
   } else {
     result = ambientLight;
   }
