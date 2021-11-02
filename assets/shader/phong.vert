@@ -5,6 +5,8 @@ layout(location = 2) in vec2 TextureCoordinate_in;
 
 out vec2 TextureCoordinate;
 out vec3 rawPosition;
+out vec3 normal;
+// out vec3 V;
 
 layout (std140) uniform model {
   // Model matrix
@@ -20,22 +22,9 @@ layout (std140) uniform camera {
   vec4 viewPosition;
 };
 
-layout (std140) uniform light {
-  // Projection * View matrix
-  mat4 lightSpaceMatrix;
-  // Position or direction of the light
-  vec4 lightVector;
-  // inner cutoff, outer cutoff, isSpotlight, isDirectionalLight
-  vec4 coefficients;
-};
-
 void main() {
   TextureCoordinate = TextureCoordinate_in;
   rawPosition = mat3(modelMatrix) * Position_in;
-  // Ambient intensity
-  float ambient = 0.1;
-  float ks = 0.75;
-  float kd = 0.75;
   // TODO: vertex shader / fragment shader
   // Hint:
   //       1. how to write a vertex shader:
@@ -56,4 +45,6 @@ void main() {
   //       9. we've set ambient & color for you
   // Example without lighting :)
   gl_Position = viewProjectionMatrix * modelMatrix * vec4(Position_in, 1.0);
+  normal = vec3(normalize(normalMatrix * vec4(Normal_in, 1.0)));
+  // V = normalize(vec3(viewPosition) - rawPosition);
 }
