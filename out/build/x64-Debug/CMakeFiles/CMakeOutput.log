@@ -50,24 +50,24 @@ The CXX compiler identification is MSVC, found in "D:/homework/Computer_Graphic/
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_7b80c && [1/2] Building C object CMakeFiles\cmTC_7b80c.dir\CMakeCCompilerABI.c.obj
-[2/2] Linking C executable cmTC_7b80c.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_a22a3 && [1/2] Building C object CMakeFiles\cmTC_a22a3.dir\CMakeCCompilerABI.c.obj
+[2/2] Linking C executable cmTC_a22a3.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_d617d && [1/2] Building CXX object CMakeFiles\cmTC_d617d.dir\CMakeCXXCompilerABI.cpp.obj
-[2/2] Linking CXX executable cmTC_d617d.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_c0b20 && [1/2] Building CXX object CMakeFiles\cmTC_c0b20.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_c0b20.exe
 
 
 
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_AVX512 succeeded with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_f4ecf && [1/2] Building CXX object CMakeFiles\cmTC_f4ecf.dir\src.cxx.obj
-[2/2] Linking CXX executable cmTC_f4ecf.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_b6a70 && [1/2] Building CXX object CMakeFiles\cmTC_b6a70.dir\src.cxx.obj
+[2/2] Linking CXX executable cmTC_b6a70.exe
 
 
 Source file was:
@@ -75,8 +75,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_AVX2 succeeded with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_061a1 && [1/2] Building CXX object CMakeFiles\cmTC_061a1.dir\src.cxx.obj
-[2/2] Linking CXX executable cmTC_061a1.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_0e654 && [1/2] Building CXX object CMakeFiles\cmTC_0e654.dir\src.cxx.obj
+[2/2] Linking CXX executable cmTC_0e654.exe
 
 
 Source file was:
@@ -84,8 +84,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_AVX succeeded with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_30577 && [1/2] Building CXX object CMakeFiles\cmTC_30577.dir\src.cxx.obj
-[2/2] Linking CXX executable cmTC_30577.exe
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_24899 && [1/2] Building CXX object CMakeFiles\cmTC_24899.dir\src.cxx.obj
+[2/2] Linking CXX executable cmTC_24899.exe
 
 
 Source file was:

@@ -52,6 +52,24 @@ void keyCallback(GLFWwindow* window, int key, int, int action, int) {
     //       2. switch between phong shader and gouraurd shader
     // Hint: use currentLight, isLightChanged, currentShader
     // Note: 1 key for 1 variable change
+    case GLFW_KEY_1:
+      currentLight = 0;
+      isLightChanged = true;
+      break;
+    case GLFW_KEY_2:
+      currentLight = 1;
+      isLightChanged = true;
+      break;
+    case GLFW_KEY_3:
+      currentLight = 2;
+      isLightChanged = true;
+      break;
+    case GLFW_KEY_Q:
+      currentShader = 1;
+      break;
+    case GLFW_KEY_E:
+      currentShader = 2;
+      break;
     default: break;
   }
 }
@@ -64,6 +82,7 @@ void resizeCallback(GLFWwindow* window, int width, int height) {
 }
 
 int main() {
+  std::cout << "test" << std::endl;
   // Initialize OpenGL context, details are wrapped in class.
   OpenGLContext::createContext(43, GLFW_OPENGL_CORE_PROFILE);
   GLFWwindow* window = OpenGLContext::getWindow();
@@ -105,9 +124,11 @@ int main() {
     //        https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniformBlockIndex.xhtml
     //       5. Check uniformBlockBinding and setUniform member function of ShaderProgram class
     //       We only set some variables here, you need more when you're lighting
+    // Give each uniform block a binding point.
     shaderPrograms[i].uniformBlockBinding("model", 0);
     shaderPrograms[i].uniformBlockBinding("camera", 1);
     // Maybe light here or other uniform you set :)
+    shaderPrograms[i].uniformBlockBinding("light", 2);
 
     shaderPrograms[i].setUniform("diffuseTexture", 0);
     shaderPrograms[i].setUniform("shadowMap", 1);
@@ -117,9 +138,13 @@ int main() {
   graphics::buffer::UniformBuffer meshUBO, cameraUBO, lightUBO;
   // Calculate UBO alignment size
   glGetIntegerv(GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT, &alignSize);
+  // The size calculation is decide on the uniform structure which defined in vertex shader
   constexpr int perMeshSize = 2 * sizeof(glm::mat4);
   constexpr int perCameraSize = sizeof(glm::mat4) + sizeof(glm::vec4);
   constexpr int perLightSize = sizeof(glm::mat4) + 2 * sizeof(glm::vec4);
+
+  // Calculate the needed amount of blocks for each object, 
+  // and convert block to byte (1 block = 256 bytes).
   int perMeshOffset = uboAlign(perMeshSize);
   int perCameraOffset = uboAlign(perCameraSize);
   int perLightOffset = uboAlign(perLightSize);
@@ -127,14 +152,12 @@ int main() {
   cameraUBO.allocate(CAMERA_COUNT * perCameraOffset, GL_DYNAMIC_DRAW);
   lightUBO.allocate(LIGHT_COUNT * perLightOffset, GL_DYNAMIC_DRAW);
 
-  // Default to first data
+  // Bind a range of the buffer object(defined by size and offset) to specific binding point
   meshUBO.bindUniformBlockIndex(0, 0, perMeshSize);
   cameraUBO.bindUniformBlockIndex(1, 0, perCameraSize);
   lightUBO.bindUniformBlockIndex(2, 0, perLightSize);
 
-  // Get texture information
-  int maxTextureSize = 1024;
-
+  int maxTextureSize = 1024; // Get texture information
   // Uncomment the following line if your GPU is very poor
   glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTextureSize);
   maxTextureSize = std::min(maxTextureSize, 4096);
@@ -169,6 +192,9 @@ int main() {
   // Hint: look what we did when binding other UBO
   for (int i = 0; i < LIGHT_COUNT; ++i) {
     int offset = i * perLightOffset;
+    lightUBO.load(offset, sizeof(glm::mat4), lights[i]->getLightSpaceMatrixPTR());
+    lightUBO.load(offset + sizeof(glm::mat4), sizeof(glm::vec4), lights[i]->getLightVectorPTR());
+    lightUBO.load(offset + sizeof(glm::mat4) + sizeof(glm::vec4), sizeof(glm::vec4), lights[i]->getLightCoefficientsPTR());
   }
 
   // Texture
@@ -181,9 +207,9 @@ int main() {
   // Hint: check the calss of the variable(wood, colorOrange, dice) we've created for you.
   //       fromFile member function
   // We currently set everything to a color
-  wood.fromColor(glm::vec4(0.5, 0, 0.5, 1));
-  dice.fromColor(glm::vec4(1, 0, 0, 1), glm::vec4(1, 0.5, 0, 1), glm::vec4(0, 1, 0, 1), glm::vec4(0, 0, 1, 1),
-                 glm::vec4(1, 1, 1, 1), glm::vec4(1, 1, 0, 1));
+  wood.fromFile("../assets/texture/wood.jpg");
+  dice.fromFile("../assets/texture/posx.jpg", "../assets/texture/negx.jpg", "../assets/texture/posy.jpg",
+                "../assets/texture/negy.jpg", "../assets/texture/posz.jpg", "../assets/texture/negz.jpg");
   
   // Meshes
   std::vector<graphics::shape::ShapePTR> meshes;
@@ -253,6 +279,7 @@ int main() {
       //       the next light info
       //       2. you should not bind the same light every time, because we are in a while-loop
       // Note: You can do this by a single line of lightUBO.bindUniformBlockIndex call
+      lightUBO.bindUniformBlockIndex(2, perLightOffset * currentLight, perLightSize);
       if (lights[currentLight]->getType() == graphics::light::LightType::Spot) {
         lights[currentLight]->update(currentCamera->getViewMatrix());
         glm::vec4 front = currentCamera->getFront();

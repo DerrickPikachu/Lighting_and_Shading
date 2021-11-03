@@ -50,6 +50,10 @@ void QuaternionCamera::updateView() {
   right = glm::cross(front, up);
   // TODO: paste your HW1 here
   viewMatrix = glm::mat4(1);
+  front = rotation * original_front;
+  up = rotation * original_up;
+  right = glm::cross(front, up);
+  viewMatrix = glm::lookAt(position, position + front, up);
   // END TODO block
   viewProjectionMatrix = projectionMatrix * viewMatrix;
 }
@@ -60,6 +64,7 @@ void QuaternionCamera::updateProjection(float aspectRatio) {
   constexpr float zFar = 100.0f;
   // TODO: paste your HW1 here
   projectionMatrix = glm::mat4(1);
+  projectionMatrix = glm::perspective(FOV, aspectRatio, zNear, zFar);
   // END TODO block
   viewProjectionMatrix = projectionMatrix * viewMatrix;
 }

@@ -1,9 +1,9 @@
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_MARCH_NATIVE failed with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_a6d21 && [1/2] Building CXX object CMakeFiles\cmTC_a6d21.dir\src.cxx.obj
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_00dbc && [1/2] Building CXX object CMakeFiles\cmTC_00dbc.dir\src.cxx.obj
 cl : 命令列 warning D9002 : 忽略未知的選項 '-march=native'
-[2/2] Linking CXX executable cmTC_a6d21.exe
+[2/2] Linking CXX executable cmTC_00dbc.exe
 
 
 Source file was:
@@ -11,9 +11,9 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_xHOST failed with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_3c213 && [1/2] Building CXX object CMakeFiles\cmTC_3c213.dir\src.cxx.obj
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_1e182 && [1/2] Building CXX object CMakeFiles\cmTC_1e182.dir\src.cxx.obj
 cl : 命令列 warning D9002 : 忽略未知的選項 '-xHost'
-[2/2] Linking CXX executable cmTC_3c213.exe
+[2/2] Linking CXX executable cmTC_1e182.exe
 
 
 Source file was:
@@ -21,9 +21,9 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test COMPILER_SUPPORT_QxHOST failed with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_1fdca && [1/2] Building CXX object CMakeFiles\cmTC_1fdca.dir\src.cxx.obj
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_9775f && [1/2] Building CXX object CMakeFiles\cmTC_9775f.dir\src.cxx.obj
 cl : 命令列 warning D9002 : 忽略未知的選項 '/QxHost'
-[2/2] Linking CXX executable cmTC_1fdca.exe
+[2/2] Linking CXX executable cmTC_9775f.exe
 
 
 Source file was:
@@ -31,9 +31,9 @@ int main() { return 0; }
 Determining if the include file pthread.h exists failed with the following output:
 Change Dir: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_311f0 && [1/2] Building C object CMakeFiles\cmTC_311f0.dir\CheckIncludeFile.c.obj
-FAILED: CMakeFiles/cmTC_311f0.dir/CheckIncludeFile.c.obj 
-C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\cmTC_311f0.dir\CheckIncludeFile.c.obj /FdCMakeFiles\cmTC_311f0.dir\ /FS -c CheckIncludeFile.c
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_d6bed && [1/2] Building C object CMakeFiles\cmTC_d6bed.dir\CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_d6bed.dir/CheckIncludeFile.c.obj 
+C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\cmTC_d6bed.dir\CheckIncludeFile.c.obj /FdCMakeFiles\cmTC_d6bed.dir\ /FS -c CheckIncludeFile.c
 CheckIncludeFile.c(1): fatal error C1083: 無法開啟包含檔案: 'pthread.h': No such file or directory
 ninja: build stopped: subcommand failed.
 

@@ -5,6 +5,12 @@ layout(location = 0) out vec4 FragColor;
 // You may want to add some in here if you add some outs in vs
 in vec3 rawPosition;
 in vec2 TextureCoordinate;
+in vec3 lightColor;
+/*in vec3 ambientLight;
+in vec3 cameraPos;
+in vec3 lightDirection;
+in float isSpotlight;
+in float cutoff;*/
 
 // Texture of object
 uniform sampler2D diffuseTexture;
@@ -35,5 +41,16 @@ void main() {
   //       9. we've set color for you
 
   // No lighting now
-  FragColor = vec4(color, 1.0);
+  /*if (isSpotlight == 1) {  // Spot light
+    vec3 L = normalize(cameraPos - rawPosition);
+    float theta = dot(-L, lightDirection);
+    if (theta > cutoff) {
+      FragColor = vec4(color * lightColor, 1.0);
+    } else {
+      FragColor = vec4(color * 0, 1.0);
+    }
+  } else {
+    FragColor = vec4(color * lightColor, 1.0);
+  }*/
+  FragColor = vec4(color * lightColor, 1.0);
 }
