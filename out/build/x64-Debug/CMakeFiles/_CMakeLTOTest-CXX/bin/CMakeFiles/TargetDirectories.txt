@@ -1,4 +1,4 @@
-C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
-C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
-C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
-C:/project/CG/project2/HW2/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir
+D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
+D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
+D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
+D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/build/x64-Debug/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir

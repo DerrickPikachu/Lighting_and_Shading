@@ -1,8 +1,8 @@
-# Install script for directory: C:/project/CG/project2/HW2/extern/glm/glm
+# Install script for directory: D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/extern/glm/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/project/CG/project2/HW2/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "D:/homework/Computer_Graphic/HW2/Lighting_and_Shading/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
