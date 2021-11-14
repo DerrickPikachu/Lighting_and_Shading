@@ -6,6 +6,7 @@ layout(location = 2) in vec2 TextureCoordinate_in;
 out vec2 TextureCoordinate;
 out vec3 rawPosition;
 out vec3 normal;
+out vec3 verPosition;
 // out vec3 V;
 
 layout (std140) uniform model {
@@ -46,5 +47,5 @@ void main() {
   // Example without lighting :)
   gl_Position = viewProjectionMatrix * modelMatrix * vec4(Position_in, 1.0);
   normal = vec3(normalize(normalMatrix * vec4(Normal_in, 1.0)));
-  // V = normalize(vec3(viewPosition) - rawPosition);
+  verPosition = Position_in;
 }

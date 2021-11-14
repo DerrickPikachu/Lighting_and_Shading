@@ -79,7 +79,8 @@ void main() {
   lightDirection = vec3(lightVector);
   isSpotlight = coefficients.z;
   cutoff = coefficients.y;*/
-
+  vec4 tem = modelMatrix * vec4(Position_in, 1.0);
+  vec3 vertexPosition = vec3(tem.x / tem.w, tem.y / tem.w, tem.z / tem.w);
   vec3 result = vec3(0);
   float cutoff = coefficients.y;
 
@@ -90,12 +91,12 @@ void main() {
   float linear;
   float quadratic;
   float attenuation;
-  float dist = length(vec3(lightVector) - rawPosition);
+  float dist = length(vec3(lightVector) - vertexPosition);
   if (coefficients.w == 1) {  // Direct light
     L = normalize(vec3(lightVector));
     attenuation = 0.65;
   } else if (coefficients.z == 1) {  // Spot light
-    L = normalize(vec3(viewPosition) - rawPosition);
+    L = normalize(vec3(viewPosition) - vertexPosition);
     theta = dot(-L, normalize(vec3(lightVector)));
     float epsilon = coefficients.x - coefficients.y;
     intensity = clamp((theta - coefficients.y) / epsilon, 0.0, 1.0);
@@ -104,7 +105,7 @@ void main() {
     quadratic = 0.0028;
     attenuation = 1.0 / (constant + dist * linear + dist * dist * quadratic);
   } else {  // Point light
-    L = normalize(vec3(lightVector) - rawPosition);
+    L = normalize(vec3(lightVector) - vertexPosition);
     linear = 0.014;
     quadratic = 0.007;
     attenuation = 1.0 / (constant + dist * linear + dist * dist * quadratic);
@@ -113,7 +114,7 @@ void main() {
   vec3 light = vec3(1.0, 1.0, 1.0);
   vec3 ambientLight = light * ambient;
   vec3 N = normalize(vec3(normalMatrix * vec4(Normal_in, 1.0)));
-  vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - rawPosition);
+  vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - vertexPosition);
   vec3 R = normalize(reflect(-L, N));
 
   vec3 diffuseLight = light * kd * max(dot(N, L), 0.0) * intensity * attenuation;
