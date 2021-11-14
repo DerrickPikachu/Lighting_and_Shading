@@ -112,18 +112,14 @@ void main() {
 
   vec3 light = vec3(1.0, 1.0, 1.0);
   vec3 ambientLight = light * ambient;
-  if ((theta > cutoff && coefficients.z == 1) || coefficients.z != 1) {
-    vec3 N = normalize(vec3(normalMatrix * vec4(Normal_in, 1.0)));
-    vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - rawPosition);
-    vec3 R = normalize(reflect(-L, N));
+  vec3 N = normalize(vec3(normalMatrix * vec4(Normal_in, 1.0)));
+  vec3 V = normalize(vec3(viewPosition.x, viewPosition.y, viewPosition.z) - rawPosition);
+  vec3 R = normalize(reflect(-L, N));
 
-    vec3 diffuseLight = light * kd * max(dot(N, L), 0.0) * intensity * attenuation;
-    vec3 specularLight = light * ks * pow(max(dot(R, V), 0), 8) * intensity * attenuation;
+  vec3 diffuseLight = light * kd * max(dot(N, L), 0.0) * intensity * attenuation;
+  vec3 specularLight = light * ks * pow(max(dot(R, V), 0), 8) * intensity * attenuation;
 
-    result = (ambientLight + diffuseLight + specularLight);
-  } else {  // The case that the vertex is outside the spotlight litting range
-    result = ambientLight;
-  }
+  result = (ambientLight + diffuseLight + specularLight);
 
   lightColor = result;
 }
